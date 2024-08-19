@@ -1,0 +1,35 @@
+
+<mat-nav-list>
+    <div class="logo py-4">
+        <img src="assets/images/logo.jpg" alt="Certificate of Excellance">
+    </div>
+    <mat-divider></mat-divider>
+    <a mat-list-item routerLink="/home" routrLinkActive="list-item-active">
+    <mat-icon> home </mat-icon>Home
+   </a>
+   <a mat-list-item> Categories</a>
+   <a mat-list-item routerLink="/cultural" routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Cultural
+  </a>
+  <a mat-list-item routerLink="/academic" routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Academic
+  </a>
+  <a mat-list-item routerLink="/participation" routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Participation
+  </a>
+  <a mat-list-item routerLink="/sports" routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Sports
+  </a>
+  <a mat-list-item routerLink="/appreciation" routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Appreciation
+  </a>
+   <!-- <a mat-list-item (click)="login()" routerLink="/dashboard"  routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Activate
+  </a> -->
+  <a mat-list-item (click)="onLogout()"  routrLinkActive="list-item-active">
+    <mat-icon>edit</mat-icon> Logout
+  </a> 
+  
+   
+
+</mat-nav-list>

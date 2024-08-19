@@ -1,0 +1,43 @@
+<div class="container">
+    <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" class="form-box1">
+        <h3>Sign Up</h3>
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" formControlName="fname" class="form-control mb-3 mt-3" placeholder="Enter First Name">
+            <small class="p-error block" *ngIf="signup.controls['fname'].invalid &&
+                signup.controls['fname'].dirty" style="color: red;">Field is required</small>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" formControlName="Lname" class="form-control mb-3 mt-3" placeholder="Enter Last Name">
+            <small class="p-error block" *ngIf="signup.controls['Lname'].invalid &&
+                signup.controls['Lname'].dirty" style="color: red;">Field is required</small>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" formControlName="email" class="form-control mb-3 mt-3" placeholder="Enter Email">
+            <small class="p-error block" *ngIf="signup.controls['email'].invalid &&
+                signup.controls['email'].dirty" style="color: red;">Field is required</small>
+        </div>
+        <div class="form-group">
+            <label for="">Mobile Number</label>
+            <input type="number" formControlName="phone" class="form-control mb-3 mt-3" placeholder="Enter Phone Number">
+            <small class="p-error block" *ngIf="signup.controls['phone'].invalid &&
+                signup.controls['phone'].dirty" style="color: red;">Field is required</small>
+        </div>
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" formControlName="password" class="form-control mb-3 mt-3" placeholder="Enter Password">
+            <small class="p-error block" *ngIf="signup.controls['password'].invalid &&
+                signup.controls['password'].dirty" style="color: red;">Field is required</small>
+        </div>
+
+        <span>You already have an Account <a routerLink="/login">Log In</a></span>
+        <br>
+        <button type="submit" class="btn btn-success" [disabled]="signup.invalid">Signup</button>
+    </form>
+</div>
+

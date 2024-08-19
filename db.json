@@ -1,0 +1,84 @@
+{
+  "signup": [
+    {
+      "fname": "Akshay",
+      "Lname": "Kumar",
+      "email": "Aks@gmail.com",
+      "phone": 9445434562,
+      "password": "Aks@123",
+      "id": "1"
+    },
+    {
+      "fname": "nandini",
+      "Lname": "gdsf",
+      "email": "nan@gmail.com",
+      "phone": 6587656313,
+      "password": "123456",
+      "id": "2"
+    },
+    {
+      "fname": "Vaishnavi",
+      "Lname": "Sinnur",
+      "email": "vaishnavisinnur@gmail.com",
+      "phone": 8088045133,
+      "password": "Aks@123",
+      "id": "3"
+    },
+    {
+      "fname": "srushti",
+      "Lname": "goudar",
+      "email": "vaish@gmail.com",
+      "phone": 7854938743,
+      "password": "vaish@21",
+      "id": "4"
+    },
+    {
+      "fname": "Drushti",
+      "Lname": "goudar",
+      "email": "srushtigoudar4@gmail.com",
+      "phone": 8690740769,
+      "password": "srushti12",
+      "id": "5"
+    },
+    {
+      "fname": "Vaishnavi",
+      "Lname": "Sinnur",
+      "email": "vaishnavisinnur@gmail.com",
+      "phone": 8088045133,
+      "password": "Aks@123",
+      "id": "6"
+    },
+    {
+      "fname": "frooti",
+      "Lname": "Nair",
+      "email": "vaish21@gmail.com",
+      "phone": 8431785784,
+      "password": "Aks@123",
+      "id": "7"
+    },
+    {
+      "fname": "rajath",
+      "Lname": "katti",
+      "email": "rajat88855@gmail.com",
+      "phone": 7483262479,
+      "password": "rajath123",
+      "id": "8"
+    },
+    {
+      "id": "973b",
+      "fname": "vaish",
+      "Lname": "Sinnur",
+      "email": "vaishnavi2002sinnur@gmail.com",
+      "phone": 7489463527,
+      "password": "Vaish@212"
+    }
+  ],
+  "certificatesData": [
+    {
+      "recipientName": "Recipient 1",
+      "collegeName": "College 1",
+      "imageUrl": "/assets/images/20230726_155601_0000.png",
+      "id": "4aa6"
+    }
+  ]
+}
