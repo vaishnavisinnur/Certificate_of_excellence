@@ -71,6 +71,14 @@
       "email": "vaishnavi2002sinnur@gmail.com",
       "phone": 7489463527,
       "password": "Vaish@212"
+    },
+    {
+      "id": "af8c",
+      "fname": "sonu",
+      "Lname": "Sinnur",
+      "email": "vaishnavisinnur@gmail.com",
+      "phone": 9164887255,
+      "password": "Admin123#"
     }
   ],
   "certificatesData": [
