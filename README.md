@@ -31,11 +31,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![image alt](https://github.com/vaishnavisinnur/certificateOfExce/blob/main/im0.jpg?raw=true)
 
 
-## Cultural Curtificates
+## Cultural Certificates
 ![image alt](https://github.com/vaishnavisinnur/certificateOfExce/blob/main/im1.jpg?raw=true)
 
 
-## Appreciation certificates
+## Appreciation Certificates
 ![image alt](https://github.com/vaishnavisinnur/certificateOfExce/blob/main/im2.jpg?raw=true)
 
 
