@@ -37,6 +37,21 @@
 <div class="container">
   <div fxLayout="row wrap" fxLayoutGap="30px grid">
     <div fxFlex="25%" fxFlex.xs="100%" *ngFor="let str of ['Cultural', 'Academic', 'Sports','Appreciation', 'Participation']">
+      <!--
+    * For each item in the array, the *ngFor generates a new mat-card with a title and content specific to that certificate type.
+
+
+
+    Mat-Card Structure:
+
+* The mat-card component from Angular Material is used to display the certificate types in a clean and responsive layout.
+  Each card includes:
+  *  A title (mat-card-title).
+  *  An image (mat-card-image).
+  *  A description (mat-card-content).
+  *  Action buttons (mat-card-actions).
+
+-->
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title style="justify-content: center;"><b>{{str}} Certificate</b></mat-card-title>
@@ -48,6 +63,19 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
+          <!--
+          
+         * Th(conditional rendering)*ngIf directive checks the current certificate type (e.g., 'Cultural', 'Academic') 
+           and dynamically shows the correct content based on the selection.
+
+           The way it's structured, everything is happening on a single page without navigating to different routes.
+
+Here's how it's working:
+* The content for different certificates (Cultural, Academic, Sports, etc.) is already present in the HTML.
+* When a user clicks on a specific certificate, the str value is updated, and Angular evaluates the condition (*ngIf="str === 'Cultural'").
+* Based on this condition, Angular will either show or hide the corresponding content dynamically on the same page, without changing the route or loading a new page.
+* The ng-template elements are conditionally displayed based on the user's interaction, so it's all part of a single-page experience.
+          -->
             <ng-container *ngIf="str === 'Cultural'; then culturalCert"></ng-container>
             <ng-container *ngIf="str === 'Academic'; then academicCert"></ng-container>
             <ng-container *ngIf="str === 'Sports'; then sportsCert"></ng-container>
@@ -59,6 +87,9 @@
   </div>
 </div>
 
+<!--The ng-template directive in Angular is used to define a template that is not rendered immediately.
+ It’s a structural directive that allows for content to be rendered later when specific conditions are met.
+-->
 <ng-template #culturalCert>
   <mat-card class="example-card">
     <!-- ... Cultural certificate content ... -->

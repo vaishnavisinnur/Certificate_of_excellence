@@ -9,6 +9,8 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
   styleUrls: ['./academic.component.css']
 })
 export class AcademicComponent {
+  // accesing template from the HTML code of this page
+  // line allows you to access a specific certificate element in the DOM.
   @ViewChild('certificate1') certificate1!: ElementRef;
   @ViewChild('certificate2') certificate2!: ElementRef;
   @ViewChild('certificate3') certificate3!: ElementRef;
@@ -65,6 +67,7 @@ export class AcademicComponent {
 
   constructor(private renderer: Renderer2) {}
 
+  //downloadCertificateForRecipient is a helper function that captures a certificate element as an image and initiates the download.
   private downloadCertificateForRecipient(recipientName: string, certificateElement: ElementRef) {
     html2canvas(certificateElement.nativeElement).then((canvas) => {
       const imageUrl = canvas.toDataURL('image/png');
