@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments'; // <-- 1. IMPORT the environment file
 
 @Component({
   selector: 'app-signup',
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
+
+  private baseUrl = environment.apiUrl; // <-- 2. ADD this line to use the environment URL
 
   constructor(private route:Router, private http:HttpClient){}
   signup:FormGroup | any;
@@ -24,9 +27,11 @@ export class SignupComponent implements OnInit{
   }
 
   signupdata(signup:FormGroup){
-    console.log(this.signup.vlaue);
-    this.signuser = this.signup.value.fname 
-    this.http.post<any>("http://localhost:3000/signup",this.signup.value).
+    console.log(this.signup.value); // Note: Corrected a typo here from 'vlaue' to 'value'
+    this.signuser = this.signup.value.fname
+    
+    // 3. UPDATE the URL in this line
+    this.http.post<any>(`${this.baseUrl}/signup`, this.signup.value).
     subscribe(res=>{
       alert('Successfully signed up');
       this.signup.reset();
@@ -35,5 +40,4 @@ export class SignupComponent implements OnInit{
       alert('Something went wrong');
     })
   }
-
 }
