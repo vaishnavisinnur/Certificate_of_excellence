@@ -1,23 +1,21 @@
-import { Component,OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../auth.service';
-import { environment } from 'src/environments';// <-- 1. IMPORT the environment file
+import { environment } from 'src/environments';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
-  private baseUrl = environment.apiUrl; // <-- 2. ADD this line to use the environment URL
+  private baseUrl = environment.apiUrl;
 
-  // injecting login service here called dependency injection
-  constructor(private http:HttpClient,private route:Router,private authservice:AuthService){}
+  constructor(private http: HttpClient, private route: Router) {}
 
-  login:FormGroup | any;
+  login: FormGroup | any;
   ngOnInit(): void {
     this.login = new FormGroup({
       'email': new FormControl(),
@@ -26,23 +24,23 @@ export class LoginComponent implements OnInit{
     })
   }
 
-  logindata(login:FormGroup){
-    // 3. UPDATE the URL in this line
+  logindata(login: FormGroup) {
+    // This now uses the correct URL for both local and live environments
     this.http.get<any>(`${this.baseUrl}/signup`)
       .subscribe
-      (res=>{
-        const regUser = res.find((user:any)=>{
-          return user.email === this.login.value.email && this.login.value.password
+      (res => {
+        const regUser = res.find((user: any) => {
+          return user.email === this.login.value.email && user.password === this.login.value.password
         });
-        if(regUser){
+        if (regUser) {
           alert('You are successfully logged In');
           this.login.reset();
           this.route.navigate(['/home']);
-        }else{
+        } else {
           alert('User not found');
           this.route.navigate(['login']);
         }
-      }, err=>{
+      }, err => {
         alert('Something went wrong');
       })
   }

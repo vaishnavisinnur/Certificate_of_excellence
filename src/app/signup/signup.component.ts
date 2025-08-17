@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments'; // <-- 1. IMPORT the environment file
+import { environment } from 'src/environments';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit{
+export class SignupComponent implements OnInit {
 
-  private baseUrl = environment.apiUrl; // <-- 2. ADD this line to use the environment URL
+  private baseUrl = environment.apiUrl;
 
-  constructor(private route:Router, private http:HttpClient){}
-  signup:FormGroup | any;
-  signuser:any;
+  constructor(private route: Router, private http: HttpClient) {}
+  signup: FormGroup | any;
+  signuser: any;
   ngOnInit(): void {
     this.signup = new FormGroup({
       'fname': new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -26,18 +26,19 @@ export class SignupComponent implements OnInit{
     });
   }
 
-  signupdata(signup:FormGroup){
-    console.log(this.signup.value); // Note: Corrected a typo here from 'vlaue' to 'value'
+  signupdata(signup: FormGroup) {
+    console.log(this.signup.value);
     this.signuser = this.signup.value.fname
     
-    // 3. UPDATE the URL in this line
+    // This now uses the correct URL for both local and live environments
     this.http.post<any>(`${this.baseUrl}/signup`, this.signup.value).
-    subscribe(res=>{
+    subscribe(res => {
       alert('Successfully signed up');
       this.signup.reset();
       this.route.navigate(['/login']);
-    },err=>{
+    }, err => {
       alert('Something went wrong');
     })
   }
+
 }
